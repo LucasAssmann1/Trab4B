@@ -40,7 +40,7 @@ trX, tsX, trY, tsY = train_test_split(X, y, test_size=0.2, random_state=42)
 page = st.sidebar.selectbox("Escolha o modelo de predição", ["Regressão Linear", "Random Forest"])
 
 # Função para exibir o modelo de Regressão Linear
-def linear_regression():
+def regressaoLinear():
     model = LinearRegression()
     model.fit(trX, trY)
 
@@ -68,7 +68,7 @@ def linear_regression():
     st.pyplot(fig)
 
 # Função com Random Forest
-def random_forest():
+def randomForest():
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(trX, trY)
 
@@ -97,6 +97,6 @@ def random_forest():
 
 # Exibir a página conforme a escolha do usuário
 if page == "Regressão Linear":
-    linear_regression()
+    regressaoLinear()
 elif page == "Random Forest":
-    random_forest()
+    randomForest()
